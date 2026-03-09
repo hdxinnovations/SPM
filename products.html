@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | SPM Engineering Works</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 6%;
+background:#111;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-area img{
+height:42px;
+}
+
+.company-name{
+font-weight:bold;
+color:#ff8c1a;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* HERO */
+
+.product-hero{
+
+height:40vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1581092335397-9583eb92d232");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.product-hero h1{
+font-size:46px;
+color:#ff8c1a;
+}
+
+/* SECTION */
+
+section{
+padding:70px 6%;
+}
+
+/* PRODUCT GRID */
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+
+background:#151515;
+
+border-radius:12px;
+
+overflow:hidden;
+
+transition:0.3s;
+
+border:1px solid #222;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 20px rgba(255,140,0,0.35);
+
+}
+
+.no-image{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#1a1a1a;
+
+}
+
+.no-image i{
+
+font-size:60px;
+
+color:#ff8c1a;
+
+}
+
+.product-card{
+
+background:linear-gradient(145deg,#141414,#0f0f0f);
+
+border-radius:14px;
+
+overflow:hidden;
+
+border:1px solid #222;
+
+transition:0.35s;
+
+position:relative;
+
+}
+
+/* bottom glow line */
+
+.product-card::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+left:0;
+
+width:100%;
+height:3px;
+
+background:linear-gradient(90deg,#ff8c1a,#ff3c00);
+
+}
+
+/* hover */
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 25px rgba(255,140,0,0.35);
+
+}
+
+/* info */
+
+.product-info{
+
+padding:25px;
+
+text-align:center;
+
+}
+
+/* badge */
+
+.product-tag{
+
+display:inline-block;
+
+font-size:12px;
+
+padding:4px 10px;
+
+border-radius:20px;
+
+background:#1f1f1f;
+
+color:#ff8c1a;
+
+margin-bottom:10px;
+
+}
+
+/* title */
+
+.product-info h3{
+
+color:#ff8c1a;
+
+margin-bottom:10px;
+
+font-size:20px;
+
+}
+
+/* description */
+
+.product-desc{
+
+font-size:14px;
+
+opacity:0.9;
+
+margin-bottom:15px;
+
+}
+
+/* specs grid */
+
+.product-specs{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+font-size:13px;
+
+}
+
+.product-specs div{
+
+background:#1a1a1a;
+
+padding:8px;
+
+border-radius:6px;
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+.product-specs span{
+
+opacity:0.8;
+
+}
+
+.product-specs b{
+
+color:#ff8c1a;
+
+}
+
+/* product image */
+
+.product-img{
+
+height:200px;
+
+background:#1c1c1c;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:40px;
+
+color:#ff8c1a;
+
+}
+
+/* product info */
+
+.product-info{
+
+padding:20px;
+
+text-align:center;
+
+}
+
+.product-info h3{
+
+color:#ff8c1a;
+
+margin-bottom:8px;
+
+}
+
+.product-info p{
+
+font-size:14px;
+
+opacity:0.9;
+
+}
+
+.product-img{
+height:220px;
+background:#1c1c1c;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.product-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.3s;
+}
+
+/* zoom effect */
+
+.product-card:hover img{
+transform:scale(1.05);
+}
+
+.product-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+margin-top:50px;
+
+}
+
+/* card */
+
+.product-card{
+
+background:#151515;
+border-radius:12px;
+overflow:hidden;
+
+border:1px solid #222;
+
+transition:0.3s;
+
+}
+
+/* hover */
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px rgba(255,140,0,0.35);
+
+}
+
+/* bigger image */
+
+.product-img{
+
+height:280px;
+
+overflow:hidden;
+
+background:#111;
+
+}
+
+/* image */
+
+.product-img img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+transition:0.4s;
+
+}
+
+/* zoom effect */
+
+.product-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* info */
+
+.product-info{
+
+padding:20px;
+
+}
+
+.product-info h3{
+
+color:#ff8c1a;
+margin-bottom:8px;
+
+}
+
+/* specs */
+
+.product-specs{
+
+list-style:none;
+
+margin-top:10px;
+
+font-size:14px;
+
+opacity:0.9;
+
+}
+
+.product-specs li{
+
+margin-top:4px;
+
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:20px;
+}
+
+/* ---------- NAVBAR ---------- */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 6%;
+
+background:#111;
+
+position:sticky;
+top:0;
+
+z-index:1000;
+
+}
+
+/* left logo */
+
+.logo-area{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.logo-area img{
+
+height:42px;
+
+}
+
+.company-name{
+
+font-size:18px;
+font-weight:bold;
+color:#ff8c1a;
+
+}
+
+/* nav links */
+
+.nav-links{
+
+display:flex;
+gap:28px;
+
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:15px;
+padding:6px 4px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* hamburger */
+
+.menu-icon{
+
+display:none;
+font-size:26px;
+cursor:pointer;
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+.nav-links{
+
+position:absolute;
+
+top:70px;
+
+left:0;
+
+width:100%;
+
+background:#111;
+
+flex-direction:column;
+
+align-items:center;
+
+display:none;
+
+padding:20px 0;
+
+}
+
+.nav-links.show{
+
+display:flex;
+
+}
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:white;
+font-size:15px;
+
+padding:6px 6px;
+
+position:relative;
+
+transition:0.3s;
+
+}
+
+/* desktop hover */
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+/* current page */
+
+.nav-links a.active{
+color:#ff8c1a;
+}
+
+/* underline animation */
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-4px;
+
+width:0%;
+height:2px;
+
+background:#ff8c1a;
+
+transition:0.3s;
+
+}
+
+/* hover underline */
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* active page underline */
+
+.nav-links a.active::after{
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo-area">
+
+<img src="logo.png">
+
+<div class="company-name">
+SPM ENGINEERING WORKS
+</div>
+
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="home.html">Home</a>
+<a href="about.html">About</a>
+<a href="products.html" class="active">Products</a>
+<a href="machinery.html">Machinery</a>
+<a href="certificate.html">Certificate</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="product-hero">
+
+<h1>Our Products</h1>
+<p>High Quality Engineering & Fabrication Products</p>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section>
+
+<h2 class="section-title">Our Products</h2>
+
+<div class="product-grid">
+
+<!-- WR 600 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<img src="3.png" alt="WR 600">
+</div>
+
+<div class="product-info">
+
+<span class="product-tag">Industrial Chassis</span>
+
+<h3>Chassis WR 600</h3>
+
+<p class="product-desc">
+Heavy-duty fabricated chassis structure used in industrial machinery manufacturing.
+</p>
+
+<div class="product-specs">
+<div><span>Length</span><b>7000 mm</b></div>
+<div><span>Width</span><b>2000 mm</b></div>
+<div><span>Height</span><b>3000 mm</b></div>
+<div><span>Weight</span><b>2006 kg</b></div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PT 400 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<img src="2.png" alt="PT 400">
+</div>
+
+<div class="product-info">
+
+<span class="product-tag">Industrial Chassis</span>
+
+<h3>Chassis PT 400</h3>
+
+<p class="product-desc">
+Precision welded chassis designed for high durability and industrial equipment usage.
+</p>
+
+<div class="product-specs">
+<div><span>Length</span><b>7000 mm</b></div>
+<div><span>Width</span><b>2000 mm</b></div>
+<div><span>Height</span><b>3000 mm</b></div>
+<div><span>Weight</span><b>4527 kg</b></div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Horizon -->
+
+<div class="product-card">
+
+<div class="product-img">
+<img src="1.png" alt="Horizon 6203">
+</div>
+
+<div class="product-info">
+
+<span class="product-tag">Industrial Chassis</span>
+
+<h3>Horizon 6203</h3>
+
+<p class="product-desc">
+Advanced heavy-duty chassis fabrication designed for specialized engineering machinery.
+</p>
+
+<div class="product-specs">
+<div><span>Length</span><b>7000 mm</b></div>
+<div><span>Width</span><b>2000 mm</b></div>
+<div><span>Height</span><b>3000 mm</b></div>
+<div><span>Weight</span><b>5857 kg</b></div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WR 1200 -->
+
+<div class="product-card">
+
+<div class="product-img no-image">
+<i class="fa-solid fa-gears"></i>
+</div>
+
+<div class="product-info">
+
+<span class="product-tag">Industrial Chassis</span>
+
+<h3>Chassis WR 1200</h3>
+
+<p class="product-desc">
+High-strength welded chassis designed for large-scale industrial machinery and heavy equipment manufacturing.
+</p>
+
+<div class="product-specs">
+<div><span>Length</span><b>7000 mm</b></div>
+<div><span>Width</span><b>2000 mm</b></div>
+<div><span>Height</span><b>3000 mm</b></div>
+<div><span>Weight</span><b>3100 kg</b></div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Conveyor -->
+
+<div class="product-card">
+
+<div class="product-img no-image">
+<i class="fa-solid fa-truck-ramp-box"></i>
+</div>
+
+<div class="product-info">
+
+<span class="product-tag">Material Handling</span>
+
+<h3>Industrial Conveyor</h3>
+
+<p class="product-desc">
+Heavy-duty conveyor system designed for efficient material handling and transportation in manufacturing industries.
+</p>
+
+<div class="product-specs">
+<div><span>Structure</span><b>Fabricated Steel</b></div>
+<div><span>Application</span><b>Material Handling</b></div>
+<div><span>Durability</span><b>High Strength</b></div>
+<div><span>Usage</span><b>Assembly Lines</b></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SPM Engineering Works. All Rights Reserved.
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+
+const links=document.querySelectorAll(".nav-links a");
+
+links.forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("navLinks").classList.remove("show");
+});
+});
+
+</script>
+
+</body>
+</html>

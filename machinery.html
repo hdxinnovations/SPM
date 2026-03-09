@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machinery | SPM Engineering Works</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 6%;
+background:#111;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-area img{
+height:42px;
+}
+
+.company-name{
+font-weight:bold;
+color:#ff8c1a;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* HERO */
+
+.machine-hero{
+
+height:40vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1581092160607-ee22621dd758");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.machine-hero h1{
+font-size:46px;
+color:#ff8c1a;
+}
+
+/* SECTION */
+
+section{
+padding:70px 6%;
+}
+
+/* GRID */
+
+.machine-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+
+}
+
+/* CARD */
+
+.machine-card{
+
+background:#151515;
+border-radius:12px;
+padding:30px;
+text-align:center;
+
+border:1px solid #222;
+
+transition:0.3s;
+
+}
+
+.machine-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px rgba(255,140,0,0.35);
+
+}
+
+/* ICON */
+
+.machine-icon{
+
+font-size:40px;
+color:#ff8c1a;
+
+margin-bottom:12px;
+
+}
+
+/* TITLE */
+
+.machine-card h3{
+
+color:#ff8c1a;
+margin-bottom:10px;
+
+}
+
+/* DESC */
+
+.machine-card p{
+
+font-size:14px;
+opacity:0.9;
+
+}
+
+.machine-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+/* second row centered */
+
+.machine-grid .machine-card:nth-child(4){
+grid-column:1 / 2;
+}
+
+.machine-grid .machine-card:nth-child(5){
+grid-column:2 / 3;
+}
+
+@media(max-width:900px){
+.machine-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.machine-grid{
+grid-template-columns:1fr;
+}
+}
+
+.safety-grid,
+.quality-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.safety-card,
+.quality-card{
+
+background:#151515;
+padding:25px;
+border-radius:10px;
+text-align:center;
+
+border:1px solid #222;
+
+transition:0.3s;
+
+}
+
+.safety-card:hover,
+.quality-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(255,140,0,0.35);
+}
+
+.safety-card i,
+.quality-card i{
+font-size:32px;
+color:#ff8c1a;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:20px;
+}
+
+/* ---------- NAVBAR ---------- */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 6%;
+
+background:#111;
+
+position:sticky;
+top:0;
+
+z-index:1000;
+
+}
+
+/* left logo */
+
+.logo-area{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.logo-area img{
+
+height:42px;
+
+}
+
+.company-name{
+
+font-size:18px;
+font-weight:bold;
+color:#ff8c1a;
+
+}
+
+/* nav links */
+
+.nav-links{
+
+display:flex;
+gap:28px;
+
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:15px;
+padding:6px 4px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* hamburger */
+
+.menu-icon{
+
+display:none;
+font-size:26px;
+cursor:pointer;
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+.nav-links{
+
+position:absolute;
+
+top:70px;
+
+left:0;
+
+width:100%;
+
+background:#111;
+
+flex-direction:column;
+
+align-items:center;
+
+display:none;
+
+padding:20px 0;
+
+}
+
+.nav-links.show{
+
+display:flex;
+
+}
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:white;
+font-size:15px;
+
+padding:6px 6px;
+
+position:relative;
+
+transition:0.3s;
+
+}
+
+/* desktop hover */
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+/* current page */
+
+.nav-links a.active{
+color:#ff8c1a;
+}
+
+/* underline animation */
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-4px;
+
+width:0%;
+height:2px;
+
+background:#ff8c1a;
+
+transition:0.3s;
+
+}
+
+/* hover underline */
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* active page underline */
+
+.nav-links a.active::after{
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo-area">
+
+<img src="logo.png">
+
+<div class="company-name">
+SPM ENGINEERING WORKS
+</div>
+
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="home.html">Home</a>
+<a href="about.html">About</a>
+<a href="products.html">Products</a>
+<a href="machinery.html" class="active">Machinery</a>
+<a href="certificate.html">Certificate</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="machine-hero">
+
+<h1>Our Machinery</h1>
+
+<p>Advanced equipment ensuring precision manufacturing</p>
+
+</section>
+
+<!-- MACHINERY -->
+
+<section>
+
+<h2 class="section-title">Our Machinery</h2>
+
+<div class="machine-grid">
+
+<!-- MIG Welding -->
+
+<div class="machine-card">
+<div class="machine-icon"><i class="fa-solid fa-fire"></i></div>
+<h3>MIG Welding Machine</h3>
+<p>Used for high-strength welding operations in chassis fabrication.</p>
+</div>
+
+<!-- Grinding -->
+
+<div class="machine-card">
+<div class="machine-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+<h3>Grinding Machine</h3>
+<p>Used for finishing and smoothing welded surfaces.</p>
+</div>
+
+<!-- Crane -->
+
+<div class="machine-card">
+<div class="machine-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+<h3>Overhead Crane</h3>
+<p>Handles heavy chassis components during fabrication.</p>
+</div>
+
+<!-- Compressor -->
+
+<div class="machine-card">
+<div class="machine-icon"><i class="fa-solid fa-fan"></i></div>
+<h3>Air Compressor</h3>
+<p>Provides compressed air for fabrication tools and welding equipment.</p>
+</div>
+
+<!-- Tools -->
+
+<div class="machine-card">
+<div class="machine-icon"><i class="fa-solid fa-gears"></i></div>
+<h3>Fabrication Tools</h3>
+<p>Includes measuring tools, cutting tools and assembly equipment.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Safety Measures</h2>
+
+<div class="safety-grid">
+
+<div class="safety-card">
+<i class="fa-solid fa-helmet-safety"></i>
+<h3>Protective Equipment</h3>
+<p>Operators use helmets, gloves, and protective clothing while working.</p>
+</div>
+
+<div class="safety-card">
+<i class="fa-solid fa-triangle-exclamation"></i>
+<h3>Machine Inspection</h3>
+<p>Regular inspection of machines ensures safe operation.</p>
+</div>
+
+<div class="safety-card">
+<i class="fa-solid fa-fire-extinguisher"></i>
+<h3>Fire Safety</h3>
+<p>Fire extinguishers and safety procedures are maintained in welding areas.</p>
+</div>
+
+<div class="safety-card">
+<i class="fa-solid fa-user-shield"></i>
+<h3>Trained Operators</h3>
+<p>All machines are operated by trained technicians only.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Product Quality</h2>
+
+<div class="quality-grid">
+
+<div class="quality-card">
+<i class="fa-solid fa-check"></i>
+<h3>Precision Manufacturing</h3>
+<p>Advanced welding techniques ensure strong and accurate fabrication.</p>
+</div>
+
+<div class="quality-card">
+<i class="fa-solid fa-magnifying-glass"></i>
+<h3>Quality Inspection</h3>
+<p>Each component is inspected before final dispatch.</p>
+</div>
+
+<div class="quality-card">
+<i class="fa-solid fa-award"></i>
+<h3>Reliable Materials</h3>
+<p>High-grade materials are used for durability and strength.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SPM Engineering Works. All Rights Reserved.
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+
+const links=document.querySelectorAll(".nav-links a");
+
+links.forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("navLinks").classList.remove("show");
+});
+});
+
+</script>
+
+</body>
+</html>

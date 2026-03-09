@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | SPM Engineering Works</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 6%;
+background:#111;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-area img{
+height:42px;
+}
+
+.company-name{
+font-weight:bold;
+color:#ff8c1a;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* HERO */
+
+.about-hero{
+
+height:45vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1581091215367-59ab6c8b6c22");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.about-hero h1{
+font-size:48px;
+color:#ff8c1a;
+}
+
+/* SECTION */
+
+section{
+padding:70px 6%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+color:#ff8c1a;
+}
+
+/* ABOUT TEXT */
+
+.about-content{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.7;
+}
+
+/* VISION MISSION */
+
+.vm-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.vm-card{
+
+background:#151515;
+padding:30px;
+border-radius:10px;
+text-align:center;
+
+border:1px solid #222;
+
+transition:0.3s;
+
+}
+
+.vm-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(255,140,0,0.3);
+}
+
+.vm-card i{
+font-size:30px;
+color:#ff8c1a;
+margin-bottom:10px;
+}
+
+/* MILESTONES */
+
+.timeline{
+
+display:grid;
+gap:25px;
+max-width:700px;
+margin:auto;
+
+}
+
+.milestone{
+
+background:#151515;
+padding:20px;
+border-left:4px solid #ff8c1a;
+
+}
+
+/* PROCESS */
+
+.process-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+/* process card */
+
+.process{
+
+background:#151515;
+
+padding:30px 20px;
+
+border-radius:12px;
+
+text-align:center;
+
+border:1px solid #222;
+
+transition:0.3s;
+
+position:relative;
+
+}
+
+/* timeline container */
+
+.process-timeline{
+
+position:relative;
+
+max-width:900px;
+
+margin:auto;
+
+margin-top:50px;
+
+}
+
+/* center line */
+
+.process-timeline::after{
+
+content:"";
+
+position:absolute;
+
+width:4px;
+
+background:#ff8c1a;
+
+top:0;
+bottom:0;
+
+left:50%;
+
+margin-left:-2px;
+
+}
+
+/* process item */
+
+.process-item{
+
+padding:20px 40px;
+
+position:relative;
+
+width:50%;
+
+}
+
+/* left side */
+
+.process-item.left{
+
+left:0;
+
+}
+
+/* right side */
+
+.process-item.right{
+
+left:50%;
+
+}
+
+/* process box */
+
+.process-box{
+
+background:#151515;
+
+padding:20px;
+
+border-radius:10px;
+
+border:1px solid #222;
+
+text-align:center;
+
+transition:0.3s;
+
+}
+
+/* icon */
+
+.process-box i{
+
+font-size:28px;
+
+color:#ff8c1a;
+
+margin-bottom:10px;
+
+}
+
+/* hover */
+
+.process-box:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 20px rgba(255,140,0,0.35);
+
+}
+
+/* connectors */
+
+.process-item::before{
+
+content:"";
+
+position:absolute;
+
+top:30px;
+
+width:20px;
+
+height:20px;
+
+border-radius:50%;
+
+background:#ff8c1a;
+
+border:4px solid #0b0b0b;
+
+z-index:1;
+
+}
+
+.process-item.left::before{
+
+right:-10px;
+
+}
+
+.process-item.right::before{
+
+left:-10px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.process-timeline::after{
+left:20px;
+}
+
+.process-item{
+width:100%;
+padding-left:60px;
+padding-right:20px;
+}
+
+.process-item.right{
+left:0;
+}
+
+.process-item.left::before,
+.process-item.right::before{
+left:10px;
+}
+
+}
+
+/* icon */
+
+.process i{
+
+font-size:32px;
+
+color:#ff8c1a;
+
+margin-bottom:12px;
+
+}
+
+/* title */
+
+.process h4{
+
+font-size:15px;
+
+}
+
+/* hover */
+
+.process:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 0 20px rgba(255,140,0,0.3);
+
+}
+
+/* PROCESS PATH */
+
+.process-path{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+
+margin-top:50px;
+
+position:relative;
+
+}
+
+/* step card */
+
+.process-step{
+
+background:#151515;
+
+width:180px;
+
+padding:25px 20px;
+
+text-align:center;
+
+border-radius:12px;
+
+border:1px solid #222;
+
+position:relative;
+
+transition:0.3s;
+
+}
+
+/* icon */
+
+.process-step i{
+
+font-size:30px;
+
+color:#ff8c1a;
+
+margin-bottom:10px;
+
+}
+
+/* title */
+
+.process-step h4{
+
+font-size:14px;
+
+}
+
+/* connector line */
+
+.process-step::after{
+
+content:"";
+
+position:absolute;
+
+right:-40px;
+top:50%;
+
+width:40px;
+height:2px;
+
+background:#ff8c1a;
+
+}
+
+/* remove last line */
+
+.process-step:last-child::after{
+display:none;
+}
+
+/* hover */
+
+.process-step:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 20px rgba(255,140,0,0.35);
+
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:20px;
+}
+
+/* ---------- NAVBAR ---------- */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 6%;
+
+background:#111;
+
+position:sticky;
+top:0;
+
+z-index:1000;
+
+}
+
+/* left logo */
+
+.logo-area{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.logo-area img{
+
+height:42px;
+
+}
+
+.company-name{
+
+font-size:18px;
+font-weight:bold;
+color:#ff8c1a;
+
+}
+
+/* nav links */
+
+.nav-links{
+
+display:flex;
+gap:28px;
+
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:15px;
+padding:6px 4px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* hamburger */
+
+.menu-icon{
+
+display:none;
+font-size:26px;
+cursor:pointer;
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+.nav-links{
+
+position:absolute;
+
+top:70px;
+
+left:0;
+
+width:100%;
+
+background:#111;
+
+flex-direction:column;
+
+align-items:center;
+
+display:none;
+
+padding:20px 0;
+
+}
+
+.nav-links.show{
+
+display:flex;
+
+}
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:white;
+font-size:15px;
+
+padding:6px 6px;
+
+position:relative;
+
+transition:0.3s;
+
+}
+
+/* desktop hover */
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+/* current page */
+
+.nav-links a.active{
+color:#ff8c1a;
+}
+
+/* underline animation */
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-4px;
+
+width:0%;
+height:2px;
+
+background:#ff8c1a;
+
+transition:0.3s;
+
+}
+
+/* hover underline */
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* active page underline */
+
+.nav-links a.active::after{
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo-area">
+
+<img src="logo.png">
+
+<div class="company-name">
+SPM ENGINEERING WORKS
+</div>
+
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="home.html">Home</a>
+<a href="about.html" class="active">About</a>
+<a href="products.html">Products</a>
+<a href="machinery.html">Machinery</a>
+<a href="certificate.html">Certificate</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="about-hero">
+
+<h1>About Our Company</h1>
+
+<p>Engineering Precision • Manufacturing Excellence</p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+<h2 class="section-title">Who We Are</h2>
+
+<div class="about-content">
+
+<p>
+SPM Engineering Works was established in 2022 and is located in Hosur, Tamil Nadu.
+The company specializes in welding, chassis fabrication, and engineering manufacturing
+solutions for the automobile industry.
+</p>
+
+<p>
+With experienced leadership and skilled technicians, the company focuses on delivering
+high-quality products, precision manufacturing, and timely delivery for its customers.
+</p>
+
+</div>
+
+</section>
+
+<!-- VISION MISSION -->
+
+<section>
+
+<h2 class="section-title">Vision & Mission</h2>
+
+<div class="vm-grid">
+
+<div class="vm-card">
+
+<i class="fa-solid fa-eye"></i>
+
+<h3>Our Vision</h3>
+
+<p>
+To serve customers globally by delivering reliable engineering solutions and maintaining long-term partnerships.
+</p>
+
+</div>
+
+<div class="vm-card">
+
+<i class="fa-solid fa-bullseye"></i>
+
+<h3>Our Mission</h3>
+
+<p>
+Deliver economic, ethical, and excellent quality manufacturing while ensuring complete customer satisfaction.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MILESTONES -->
+
+<section>
+
+<h2 class="section-title">Company Journey</h2>
+
+<div class="timeline">
+
+<div class="milestone">2022 – Plant Started</div>
+<div class="milestone">2022 – WR600 / WR1200 Production Started</div>
+<div class="milestone">2022 – PT400X Production Started</div>
+<div class="milestone">2022 – Horizon Chassis Production Started</div>
+<div class="milestone">2022 – Conveyor Production Started</div>
+
+</div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section>
+
+<h2 class="section-title">Manufacturing Process</h2>
+
+<div class="process-timeline">
+
+<div class="process-item left">
+<div class="process-box">
+<i class="fa-solid fa-box"></i>
+<h4>Material Receiving</h4>
+</div>
+</div>
+
+<div class="process-item right">
+<div class="process-box">
+<i class="fa-solid fa-gears"></i>
+<h4>Fit-Up & Rolling</h4>
+</div>
+</div>
+
+<div class="process-item left">
+<div class="process-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+<h4>Inspection</h4>
+</div>
+</div>
+
+<div class="process-item right">
+<div class="process-box">
+<i class="fa-solid fa-fire"></i>
+<h4>Full Welding</h4>
+</div>
+</div>
+
+<div class="process-item left">
+<div class="process-box">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+<h4>Grinding</h4>
+</div>
+</div>
+
+<div class="process-item right">
+<div class="process-box">
+<i class="fa-solid fa-check"></i>
+<h4>Final Inspection</h4>
+</div>
+</div>
+
+<div class="process-item left">
+<div class="process-box">
+<i class="fa-solid fa-truck"></i>
+<h4>Dispatch</h4>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SPM Engineering Works. All Rights Reserved.
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+
+const links=document.querySelectorAll(".nav-links a");
+
+links.forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("navLinks").classList.remove("show");
+});
+});
+
+</script>
+</body>
+</html>

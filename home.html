@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPM Engineering Works</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ---------- GLOBAL ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+/* ---------- NAVBAR ---------- */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 6%;
+
+background:#111;
+
+position:sticky;
+top:0;
+
+z-index:1000;
+
+}
+
+/* left logo */
+
+.logo-area{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.logo-area img{
+
+height:42px;
+
+}
+
+.company-name{
+
+font-size:18px;
+font-weight:bold;
+color:#ff8c1a;
+
+}
+
+/* nav links */
+
+.nav-links{
+
+display:flex;
+gap:28px;
+
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:15px;
+padding:6px 4px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+.nav-links a.active{
+color:#ff8c1a;
+border-bottom:2px solid #ff8c1a;
+}
+
+/* hamburger */
+
+.menu-icon{
+
+display:none;
+font-size:26px;
+cursor:pointer;
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+height:85vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+background:
+
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+
+background-size:cover;
+background-position:center;
+
+padding:0 20px;
+
+}
+
+.hero h1{
+
+font-size:clamp(32px,6vw,60px);
+
+color:#ff8c1a;
+
+margin-bottom:10px;
+
+}
+
+.hero p{
+
+max-width:700px;
+
+line-height:1.6;
+
+opacity:0.9;
+
+}
+
+.hero button{
+
+margin-top:25px;
+
+padding:12px 30px;
+
+background:#ff8c1a;
+
+border:none;
+
+color:white;
+
+font-size:15px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+.tagline{
+color:#ff8c1a;
+margin-bottom:6px;
+font-weight:500;
+}
+
+.hero p{
+max-width:700px;
+margin:8px auto;   /* smaller vertical space */
+line-height:1.5;   /* tighter text spacing */
+opacity:0.9;
+}
+
+/* buttons */
+
+.hero-buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn-primary{
+
+background:#ff8c1a;
+border:none;
+padding:12px 28px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+
+}
+
+.btn-secondary{
+
+background:transparent;
+border:2px solid #ff8c1a;
+padding:10px 26px;
+color:#ff8c1a;
+border-radius:6px;
+cursor:pointer;
+
+}
+
+/* highlights */
+
+.hero-highlights{
+
+margin-top:35px;
+
+display:flex;
+gap:50px;
+
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.hero-highlights h4{
+
+color:#ff8c1a;
+margin-bottom:4px;
+
+}
+
+/* ---------- SECTION ---------- */
+
+section{
+
+padding:70px 6%;
+
+}
+
+/* company info */
+
+.info-card{
+
+background:#141414;
+
+padding:30px 25px;
+
+border-radius:12px;
+
+text-align:center;
+
+position:relative;
+
+border:2px solid transparent;
+
+/* gradient border */
+background-image:
+linear-gradient(#141414,#141414),
+linear-gradient(120deg,#ff8c1a,#ff4500);
+
+background-origin:border-box;
+background-clip:padding-box,border-box;
+
+transition:0.35s;
+
+}
+
+/* hover animation */
+
+.info-card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:
+0 0 20px rgba(255,140,0,0.4),
+0 0 40px rgba(255,100,0,0.25);
+
+}
+
+/* title */
+
+.info-card h3{
+
+color:#ff8c1a;
+
+margin-bottom:8px;
+
+font-size:18px;
+
+}
+
+/* text */
+
+.info-card p{
+
+opacity:0.85;
+
+font-size:14px;
+
+}
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.icon{
+
+width:60px;
+height:60px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin:auto;
+margin-bottom:15px;
+
+border-radius:50%;
+
+background:#1a1a1a;
+
+color:#ff8c1a;
+
+font-size:24px;
+
+border:2px solid #ff8c1a;
+
+}
+
+/* ---------- FOUNDERS ---------- */
+
+.founders{
+
+text-align:center;
+
+padding:80px 6%;
+
+}
+
+.founders h2{
+
+font-size:32px;
+
+margin-bottom:40px;
+
+color:#ff8c1a;
+
+}
+
+/* grid */
+
+.founder-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:40px;
+
+}
+
+/* card */
+
+.founder{
+
+background:#151515;
+
+padding:30px;
+
+border-radius:12px;
+
+transition:0.3s;
+
+border:1px solid #222;
+
+}
+
+.founder:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 25px rgba(255,140,0,0.35);
+
+}
+
+/* image frame */
+
+.founder-img{
+
+width:120px;
+height:120px;
+
+margin:auto;
+
+border-radius:50%;
+
+overflow:hidden;
+
+border:3px solid #ff8c1a;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#0d0d0d;
+
+margin-bottom:15px;
+
+}
+
+.founder-img img{
+
+width:80%;
+
+}
+
+/* name */
+
+.founder h3{
+
+margin-top:10px;
+
+color:#ff8c1a;
+
+}
+
+/* description */
+
+.founder p{
+
+font-size:14px;
+
+opacity:0.85;
+
+margin-top:8px;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+background:#111;
+
+text-align:center;
+
+padding:20px;
+
+font-size:14px;
+
+margin-top:40px;
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+.nav-links{
+
+position:absolute;
+
+top:70px;
+
+left:0;
+
+width:100%;
+
+background:#111;
+
+flex-direction:column;
+
+align-items:center;
+
+display:none;
+
+padding:20px 0;
+
+}
+
+.nav-links.show{
+
+display:flex;
+
+}
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:white;
+font-size:15px;
+
+padding:6px 6px;
+
+position:relative;
+
+transition:0.3s;
+
+}
+
+/* desktop hover */
+
+.nav-links a:hover{
+color:#ff8c1a;
+}
+
+/* current page */
+
+.nav-links a.active{
+color:#ff8c1a;
+}
+
+/* underline animation */
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-4px;
+
+width:0%;
+height:2px;
+
+background:#ff8c1a;
+
+transition:0.3s;
+
+}
+
+/* hover underline */
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* active page underline */
+
+.nav-links a.active::after{
+width:100%;
+}
+
+/* mobile tap */
+
+.nav-links a:active{
+color:#ff8c1a;
+}
+
+.info-card{
+
+background:#141414;
+
+padding:30px 25px;
+
+border-radius:12px;
+
+text-align:center;
+
+position:relative;
+
+border:2px solid transparent;
+
+background-image:
+linear-gradient(#141414,#141414),
+linear-gradient(120deg,#ff8c1a,#ff4500);
+
+background-origin:border-box;
+background-clip:padding-box,border-box;
+
+transition:0.35s;
+
+}
+
+/* animation for desktop + mobile */
+
+.info-card:hover,
+.info-card:active,
+.info-card:focus{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:
+0 0 20px rgba(255,140,0,0.4),
+0 0 40px rgba(255,100,0,0.25);
+
+}
+
+.founder{
+
+background:#151515;
+
+padding:30px;
+
+border-radius:12px;
+
+transition:0.3s;
+
+border:1px solid #222;
+
+}
+
+/* animation for desktop + mobile */
+
+.founder:hover,
+.founder:active,
+.founder:focus{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 25px rgba(255,140,0,0.35);
+
+}
+
+/* animation start state */
+
+.info-card,
+.founder{
+opacity:0;
+transform:translateY(40px);
+transition:0.6s ease;
+}
+
+/* animation when visible */
+
+.show-card{
+opacity:1;
+transform:translateY(0);
+}
+
+.info-card:hover,
+.founder:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 25px rgba(255,140,0,0.35);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo-area">
+
+<img src="logo.png">
+
+<div class="company-name">
+SPM ENGINEERING WORKS
+</div>
+
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="home.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="products.html">Products</a>
+<a href="machinery.html">Machinery</a>
+<a href="certificate.html">Certificate</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>SPM Engineering Works</h1>
+
+<h3 class="tagline">
+Precision Welding & Engineering Manufacturing
+</h3>
+
+<p>
+SPM Engineering Works is a trusted manufacturing company specializing in 
+high-quality chassis fabrication, conveyor structures, and precision welding solutions 
+for the automobile and engineering industries.
+</p>
+
+<p>
+Founded in 2022 and located in Hosur, Tamil Nadu, we focus on delivering 
+excellent quality, timely production, and complete customer satisfaction.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn-primary">Explore Products</button>
+<button class="btn-secondary">Contact Us</button>
+
+</div>
+
+</section>
+
+<!-- COMPANY DETAILS -->
+
+<section>
+
+<h2>Company Overview</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+<div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+<h3>Founded</h3>
+<p>January 2022</p>
+</div>
+
+<div class="info-card">
+<div class="icon"><i class="fa-solid fa-users"></i></div>
+<h3>Employees</h3>
+<p>25 Skilled Workers</p>
+</div>
+
+<div class="info-card">
+<div class="icon"><i class="fa-solid fa-handshake"></i></div>
+<h3>Major Customer</h3>
+<p>Terex India Pvt Ltd</p>
+</div>
+
+<div class="info-card">
+<div class="icon"><i class="fa-solid fa-industry"></i></div>
+<h3>Industry</h3>
+<p>Automobile Manufacturing</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOUNDERS -->
+
+<section class="founders">
+
+<h2>Our Founders</h2>
+
+<div class="founder-grid">
+
+<div class="founder">
+
+<div class="founder-img">
+<img src="logo.png">
+</div>
+
+<h3>Mr. R.D. Suresh</h3>
+
+<p>
+Director – 22+ years experience in welding and engineering manufacturing.
+</p>
+
+</div>
+
+<div class="founder">
+
+<div class="founder-img">
+<img src="logo.png">
+</div>
+
+<h3>Mr. M.C. Palanimuthu</h3>
+
+<p>
+Co-Founder – Expertise in production operations and industrial fabrication.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SPM Engineering Works. All Rights Reserved.
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("navLinks").classList.toggle("show")
+
+}
+
+</script>
+
+<script>
+
+const cards = document.querySelectorAll(".info-card, .founder");
+
+function revealCards(){
+
+const trigger = window.innerHeight * 0.85;
+
+cards.forEach(card => {
+
+const top = card.getBoundingClientRect().top;
+
+if(top < trigger){
+card.classList.add("show-card");
+}
+
+});
+
+}
+
+window.addEventListener("scroll", revealCards);
+window.addEventListener("load", revealCards);
+
+</script>
+
+</body>
+</html>
